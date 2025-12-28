@@ -1,0 +1,79 @@
+YouTube HumanWatch Pro - Setup Guide
+=====================================
+
+1. INSTALLATION
+---------------
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows)
+venv\Scripts\activate
+
+# Activate (Mac/Linux)
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements_advanced.txt
+
+# Install Playwright browsers
+playwright install chromium firefox --with-deps
+
+2. CONFIGURATION
+----------------
+- Edit config_advanced.json for your needs
+- Set "headless": false for testing
+- Set "use_proxy": false unless you have proxies
+- Adjust session settings as needed
+
+3. QUICK START
+--------------
+# Test installation
+python run_quick.py
+
+# Run single session
+python main.py --url "YOUR_YOUTUBE_URL"
+
+# Run campaign (3 sessions)
+python main.py --url "YOUR_YOUTUBE_URL" --sessions 3
+
+# Launch GUI
+python main.py --gui
+
+4. FOR UNIVERSITY PRESENTATION
+------------------------------
+# Run presentation demo
+python presentation_demo.py
+
+# Show statistics
+python main.py --stats
+
+# Export data for report
+python main.py --export csv
+
+5. PROJECT STRUCTURE
+--------------------
+main.py              - Main entry point
+bot_advanced.py      - Core bot engine
+stealth_manager.py   - Anti-detection system
+gui_pro.py           - GUI interface
+config_advanced.json - Configuration
+database/            - Session logs
+exports/             - Exported data
+
+6. ETHICAL USE
+---------------
+- STRICTLY FOR EDUCATIONAL PURPOSES
+- DO NOT USE ON REAL YOUTUBE ACCOUNTS
+- VIOLATES YOUTUBE TERMS OF SERVICE
+- FOR UNIVERSITY PROJECTS ONLY
+
+7. TROUBLESHOOTING
+------------------
+Issue: "ModuleNotFoundError: No module named 'playwright'"
+Solution: Run: pip install playwright
+
+Issue: Browser won't launch
+Solution: Run: playwright install chromium
+
+Issue: Proxy errors
+Solution: Set "use_proxy": false in config

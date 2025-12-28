@@ -1,0 +1,166 @@
+{
+  "project": {
+    "name": "YouTube HumanWatch Pro",
+    "version": "3.0",
+    "author": "University Project",
+    "purpose": "Educational research on web automation and anti-detection systems"
+  },
+  
+  "stealth_settings": {
+    "enabled": true,
+    "level": "maximum",
+    "fingerprint_rotation": true,
+    "webgl_spoofing": true,
+    "canvas_spoofing": true,
+    "audio_context_spoofing": true,
+    "font_spoofing": true,
+    "timezone_spoofing": true,
+    "locale_spoofing": true
+  },
+  
+  "behavior_settings": {
+    "human_like_mouse": true,
+    "natural_scrolling": true,
+    "variable_speed": true,
+    "random_pauses": true,
+    "engagement_actions": true,
+    "viewer_profiles": ["casual", "engaged", "fan", "distracted"],
+    "profile_weights": [0.5, 0.3, 0.1, 0.1],
+    
+    "watch_patterns": {
+      "educational": [100, 95, 92, 88, 85, 82, 78, 75, 70, 65, 60],
+      "entertainment": [100, 85, 75, 70, 65, 60, 55, 50, 45, 40, 35],
+      "tutorial": [100, 98, 95, 93, 90, 88, 85, 83, 80, 78, 75]
+    },
+    
+    "mouse_movement": {
+      "speed_min": 0.3,
+      "speed_max": 1.8,
+      "acceleration_min": 0.01,
+      "acceleration_max": 0.15,
+      "pause_frequency_min": 0.1,
+      "pause_frequency_max": 0.3
+    }
+  },
+  
+  "network_settings": {
+    "use_proxy": false,
+    "proxy_service": "free",
+    "proxy_rotation": true,
+    "proxy_check": true,
+    "max_latency": 5000,
+    
+    "residential_simulation": {
+      "enabled": true,
+      "isp_rotation": true,
+      "geo_diversity": true,
+      "asn_rotation": true
+    },
+    
+    "bandwidth_simulation": {
+      "enabled": true,
+      "min_bandwidth": 10,
+      "max_bandwidth": 1000,
+      "variable_speed": true
+    }
+  },
+  
+  "session_settings": {
+    "max_concurrent_sessions": 1,
+    "min_session_delay": 300,
+    "max_session_delay": 1800,
+    "session_timeout": 3600,
+    
+    "watch_time": {
+      "min_seconds": 120,
+      "max_seconds": 600,
+      "variable": true,
+      "gaussian_noise": true
+    },
+    
+    "browsing_flow": {
+      "start_with_google": 0.7,
+      "watch_random_videos": 0.8,
+      "min_random_videos": 1,
+      "max_random_videos": 3,
+      "end_with_browsing": 0.5
+    }
+  },
+  
+  "browser_settings": {
+    "headless": false,
+    "browsers": ["chromium", "firefox", "webkit"],
+    "browser_weights": [0.7, 0.2, 0.1],
+    
+    "window_sizes": [
+      {"width": 1920, "height": 1080},
+      {"width": 1366, "height": 768},
+      {"width": 1536, "height": 864},
+      {"width": 1440, "height": 900},
+      {"width": 1280, "height": 720},
+      {"width": 1600, "height": 900}
+    ],
+    
+    "user_agents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0"
+    ]
+  },
+  
+  "engagement_settings": {
+    "like_probability": {
+      "casual": 0.3,
+      "engaged": 0.7,
+      "fan": 0.9,
+      "distracted": 0.1
+    },
+    
+    "comment_probability": {
+      "casual": 0.05,
+      "engaged": 0.2,
+      "fan": 0.5,
+      "distracted": 0.01
+    },
+    
+    "subscribe_probability": {
+      "casual": 0.1,
+      "engaged": 0.4,
+      "fan": 0.8,
+      "distracted": 0.02
+    },
+    
+    "share_probability": {
+      "casual": 0.02,
+      "engaged": 0.1,
+      "fan": 0.3,
+      "distracted": 0.005
+    }
+  },
+  
+  "database_settings": {
+    "path": "database/sessions.db",
+    "log_activities": true,
+    "log_mouse_movements": false,
+    "log_network_data": false,
+    "retention_days": 30
+  },
+  
+  "logging_settings": {
+    "level": "INFO",
+    "file": "humanwatch.log",
+    "max_size_mb": 10,
+    "backup_count": 5,
+    "console_output": true
+  },
+  
+  "safety_settings": {
+    "max_daily_sessions": 10,
+    "cooldown_hours": 24,
+    "auto_shutdown": true,
+    "emergency_stop": true,
+    "compliance_check": true
+  }
+}
